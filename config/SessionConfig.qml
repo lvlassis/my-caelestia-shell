@@ -7,6 +7,7 @@ JsonObject {
     property Commands commands: Commands {}
 
     property Sizes sizes: Sizes {}
+    property Keybinds keybinds: Keybinds {}
 
     component Commands: JsonObject {
         property list<string> logout: ["loginctl", "terminate-user", ""]
@@ -17,5 +18,13 @@ JsonObject {
 
     component Sizes: JsonObject {
         property int button: 80
+    }
+
+    component Keybinds: JsonObject {
+        property bool enabled: true
+        property string shutdown: "S"
+        property string reboot: "R"
+        property string hibernate: "U"
+        property string logout: "E"
     }
 }

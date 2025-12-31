@@ -15,6 +15,27 @@ Column {
     padding: Appearance.padding.large
     spacing: Appearance.spacing.large
 
+    Keys.onPressed: event => {
+        if (!Config.session.keybinds.enabled)
+            return;
+
+        const key = String.fromCharCode(event.key).toUpperCase();
+
+        if (key === Config.session.keybinds.shutdown.toUpperCase()) {
+            Quickshell.execDetached(Config.session.commands.shutdown);
+            event.accepted = true;
+        } else if (key === Config.session.keybinds.reboot.toUpperCase()) {
+            Quickshell.execDetached(Config.session.commands.reboot);
+            event.accepted = true;
+        } else if (key === Config.session.keybinds.hibernate.toUpperCase()) {
+            Quickshell.execDetached(Config.session.commands.hibernate);
+            event.accepted = true;
+        } else if (key === Config.session.keybinds.logout.toUpperCase()) {
+            Quickshell.execDetached(Config.session.commands.logout);
+            event.accepted = true;
+        }
+    }
+
     SessionButton {
         id: logout
 
