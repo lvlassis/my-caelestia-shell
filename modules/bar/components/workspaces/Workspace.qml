@@ -140,7 +140,7 @@ Item {
             }
             color: root.fgColour
             verticalAlignment: Qt.AlignVCenter
-            font.family: Tokens.font.workspaces
+            font: Tokens.font.body.builders.small.scale(1.1).family(Tokens.font.workspaces).build()
         }
     }
 
