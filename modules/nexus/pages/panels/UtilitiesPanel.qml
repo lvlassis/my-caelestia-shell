@@ -135,12 +135,20 @@ PageBase {
         }
 
         ToggleRow {
-            last: true
             text: Tr.tr("VPN")
             subtext: Tr.tr("Connect or disconnect the VPN")
             disabled: !Config.utilities.cards.quickToggles
             checked: root.isToggleOn("vpn")
             onToggled: root.setToggleOn("vpn", checked)
+        }
+
+        ToggleRow {
+            last: true
+            text: Tr.tr("Work mode")
+            subtext: Tr.tr("Enable work mode")
+            disabled: !Config.utilities.cards.quickToggles
+            checked: root.isToggleOn("workMode")
+            onToggled: root.setToggleOn("workMode", checked)
         }
     }
 }

@@ -156,6 +156,15 @@ StyledRect {
                         onClicked: VPN.toggle()
                     }
                 }
+                DelegateChoice {
+                    roleValue: "workMode"
+                    delegate: Toggle {
+                        icon: "corporate_fare"
+                        checked: WorkNetwork.connected
+                        enabled: !WorkNetwork.connecting && !WorkNetwork.disconnecting
+                        onClicked: WorkNetwork.toggle()
+                    }
+                }
             }
         }
     }
